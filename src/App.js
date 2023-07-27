@@ -7,6 +7,7 @@ import Task from "./components/Task";
 
 
 function App() {
+  
   const storedItems = JSON.parse(localStorage.getItem('DataAtLocal'));
   const [todo,settodo]= useState(storedItems===[]|| storedItems===null?[]:storedItems);
   

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 import {   VStack,Text, HStack, Heading} from '@chakra-ui/react';
-import { CheckIcon } from '@chakra-ui/icons';
+import { CheckIcon, DeleteIcon } from '@chakra-ui/icons';
 const Task = ({todo,removeTask}) => {
   function catchid(id){
     removeTask(id);
@@ -8,7 +8,7 @@ const Task = ({todo,removeTask}) => {
   if(todo.length===0)
   return(
     <>
-    <Heading textAlign={'center'} pt={5} pb={5} mb={500}>Oops We are all set !</Heading>
+    <Heading textAlign={'center'} color={"gray"} pt={5} pb={5} mb={500}>Oops We are all set !</Heading>
     </>
   )
   return (
@@ -40,7 +40,8 @@ const TaskItem =({id,text,catchid})=>(
         
        
     </Text>
-    < CheckIcon bgColor={'green'} height={7} width={7} borderRadius={'full'} onClick={()=>catchid(id)}/>
+    < CheckIcon bgColor={'green'} height={9} width={9} borderRadius={'full'} p={1} onClick={()=>catchid(id)}/>
+    <DeleteIcon bgColor={'red'} height={9} width={9} borderRadius={'full'} p={1} onClick={()=>catchid(id)}/>
     </HStack>
     </>
 );
